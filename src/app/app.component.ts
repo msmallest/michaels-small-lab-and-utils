@@ -23,6 +23,7 @@ import { ContentCreatorsComponent } from './content-creators.component';
   ],
   template: `
     <h1>Michael's Lab/Devtools</h1>
+    <a href="https://github.com/msmallest/michaels-small-lab-and-utils" target="_blank">Repo</a>
 
     <h2>Educators</h2>
     <app-content-creators name="Joshua Morony" specialty="rxjs + signals + signalSlice creator" description="YouTuber / ngxtension maintainer" [socials]="{youtube: '@JoshuaMorony'}"/>
