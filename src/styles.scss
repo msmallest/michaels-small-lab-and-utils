@@ -2,3 +2,36 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+button {
+  --mdc-filled-button-container-shape: 4px
+}
+
+.hljs-comment {
+  color: red;
+}
+
+.language-typescript {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0px;
+  margin-top: -10px;
+}
+
+.code-bg {
+  margin-top: 20px;
+  background: rgb(40, 44, 52);
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  font-size: 20px;
+  display: flex;
+  align-items: baseline;
+  .language-typescript {
+    font-size: 16px !important;
+    padding: 4px;
+  }
+}

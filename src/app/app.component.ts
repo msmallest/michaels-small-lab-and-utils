@@ -9,6 +9,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { ContentCreatorsComponent } from './content-creators.component';
 import { LinksComponent } from './links.component';
 import { Base64Component } from './base-64.component';
+import { SignalExamplsComponent } from './temp-signal-tutorial-clone/signal-exampls.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +22,24 @@ import { Base64Component } from './base-64.component';
     ContentCreatorsComponent,
     LinksComponent,
     Base64Component,
+    SignalExamplsComponent,
+    MatButtonModule,
+    MatExpansionModule,
   ],
   template: `
+    <mat-accordion>
+      <mat-expansion-panel
+        (opened)="$showSignalExamples.set(true)"
+        (closed)="$showSignalExamples.set(false)"
+      >
+      <mat-expansion-panel-header>
+      <mat-panel-title> {{!$showSignalExamples() ? 'SHOW signal examples' : 'HIDE signal examples'}} </mat-panel-title>
+
+    </mat-expansion-panel-header>
+      <app-signal-examples />
+      </mat-expansion-panel>
+    </mat-accordion>
+
     <div id="app-component-root">
       <section>
         <h1>Michael's Lab/Devtools</h1>
@@ -31,6 +49,9 @@ import { Base64Component } from './base-64.component';
           >Repo</a
         >
       </section>
+
+      Open the panel above for a detailed example of signals
+
       <section>
         <h2>Helpful Links</h2>
         <app-links />
@@ -59,5 +80,5 @@ import { Base64Component } from './base-64.component';
   `,
 })
 export class AppComponent {
-  title = 'michaels-small-lab-and-utils';
+  $showSignalExamples = signal(false);
 }
