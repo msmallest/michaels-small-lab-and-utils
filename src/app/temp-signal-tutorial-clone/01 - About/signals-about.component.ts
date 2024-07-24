@@ -113,7 +113,7 @@ export class SignalsAboutComponent {
 
   // `.set` doing exactly what it sounds like
   uppercaseName() {
-    this.$name.set(this.$name().toLowerCase());
+    this.$name.set(this.$name().toUpperCase());
   }
 
   // `.update` in this example is so simple it could just be `.set`, but it is
