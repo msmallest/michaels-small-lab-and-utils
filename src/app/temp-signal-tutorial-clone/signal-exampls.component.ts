@@ -15,6 +15,7 @@ import { FormEventsExampleComponent } from './form-events-example/form-events-ex
   ],
   template: `
     <h1>Signals Tutorial</h1>
+    <a href="">link to source code</a>
     <app-signals-about />
     <app-signal-apis />
     <app-misc-examples />

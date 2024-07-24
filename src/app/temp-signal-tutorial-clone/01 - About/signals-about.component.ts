@@ -120,7 +120,7 @@ export class SignalsAboutComponent {
   //     more powerful and relevant for complex data like objects, where you may
   //     need to desctructure properties
   lowercaseName() {
-    this.$name.update((name) => name.toUpperCase());
+    this.$name.update((name) => name.toLowerCase());
   }
 
   constructor() {
