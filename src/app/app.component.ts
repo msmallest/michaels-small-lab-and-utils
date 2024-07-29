@@ -11,6 +11,7 @@ import { LinksComponent } from './links.component';
 import { Base64Component } from './base-64.component';
 import { SignalExamplsComponent } from './temp-signal-tutorial-clone/signal-exampls.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import {CodeStyledComponent} from "./code-styled.component";
 
 @Component({
   selector: 'app-root',
@@ -25,8 +26,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     SignalExamplsComponent,
     MatButtonModule,
     MatExpansionModule,
+    CodeStyledComponent,
   ],
   template: `
+    <app-code-styled />
     <mat-accordion>
       <mat-expansion-panel
         (opened)="$showSignalExamples.set(true)"
