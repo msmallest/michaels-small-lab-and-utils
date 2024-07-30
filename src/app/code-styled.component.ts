@@ -116,7 +116,7 @@ export class CodeStyledComponent {
   stuffCapsReplacement: Signal<CodeReplacement> = computed(() => ({
     code: `
 $stuffCaps = computed(() => {
-    return this.$stuff().toUpperCase();
+    return this.$stuff().toUpperCase(); // -+-
 });
 `,
     with: this.$stuffCaps(),
