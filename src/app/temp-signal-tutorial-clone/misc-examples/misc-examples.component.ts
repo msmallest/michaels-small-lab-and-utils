@@ -6,6 +6,7 @@ import {SignalInputComponent} from "./signal-input/signal-input.component";
 import {ComparatorTypesComponent} from "./comparator-types/comparator-types.component";
 import { map, of } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import {UsersService} from "./users.service";
 
 @Component({
   selector: 'app-misc-examples',
@@ -51,6 +52,8 @@ import { toSignal } from '@angular/core/rxjs-interop';
   `
 })
 export class MiscExamplesComponent {
+  constructor(private usersService: UsersService) {}
+
   value = signal(0);
 
   $doubleValue = computed(() => this.value() * 2)
@@ -60,7 +63,7 @@ export class MiscExamplesComponent {
   }
 
   // Pretend this is a call to some service
-  valueFromDatabase$ = of([{name: 'Dave'}, {name: 'Jeff'}])
+  valueFromDatabase$ = this.usersService.getUsers()
   // Note - initialValue is optional, w/o it it is typed including `| undefined`
   $valueFromDatabase = toSignal(this.valueFromDatabase$, {initialValue: []})
 
