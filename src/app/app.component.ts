@@ -22,4 +22,8 @@ import { HeaderComponent } from "./core/layout/header/header.component";
 })
 export class AppComponent {
     lett = '@let'
+
+    constructor() {
+        console.log('hey')
+    }
 }
